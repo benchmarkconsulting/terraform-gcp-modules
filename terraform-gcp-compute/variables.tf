@@ -90,3 +90,11 @@ variable "startup" {
 variable "labels" {
   default     = null
 }
+
+variable "access_config" {
+  description = "IPs the VM instance can be accessed via the Internet. If empty google will auto assign"
+  type = list(object({
+    nat_ip       = string
+  }))
+  default = []
+}
