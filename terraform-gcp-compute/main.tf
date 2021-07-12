@@ -64,6 +64,12 @@ resource "google_compute_instance" "Windows" {
   network_interface {
     subnetwork = var.subnetwork
     subnetwork_project = var.subnetwork_project
+    dynamic "access_config" {
+      for_each = var.access_config
+      content {
+        nat_ip       = access_config.value.nat_ip
+      }
+    }
   }
 
   service_account {
@@ -126,6 +132,12 @@ resource "google_compute_instance" "Linux" {
   network_interface {
     subnetwork = var.subnetwork
     subnetwork_project = var.subnetwork_project
+    dynamic "access_config" {
+      for_each = var.access_config
+      content {
+        nat_ip       = access_config.value.nat_ip
+      }
+    }
   }
 
   service_account {
