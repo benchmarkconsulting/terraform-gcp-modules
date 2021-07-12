@@ -45,6 +45,7 @@ variable "subnetwork" {
 variable "subnetwork_project" {
   type        = string
   description = "The project in which the subnetwork belongs."
+  default     = ""
 }
 
 variable "tags" {

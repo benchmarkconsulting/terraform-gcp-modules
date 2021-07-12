@@ -63,7 +63,7 @@ resource "google_compute_instance" "Windows" {
 
   network_interface {
     subnetwork = var.subnetwork
-    subnetwork_project = var.subnetwork_project ? var.subnetwork_project : null
+    subnetwork_project = var.subnetwork_project
   }
 
   service_account {
@@ -125,7 +125,7 @@ resource "google_compute_instance" "Linux" {
 
   network_interface {
     subnetwork = var.subnetwork
-    subnetwork_project = var.subnetwork_project ? var.subnetwork_project : null
+    subnetwork_project = var.subnetwork_project
   }
 
   service_account {
