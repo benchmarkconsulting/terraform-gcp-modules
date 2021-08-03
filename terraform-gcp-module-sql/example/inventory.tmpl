@@ -1,0 +1,22 @@
+[windows]
+%{ for index, ip in windows-address ~}
+${ip}
+%{ endfor ~}
+
+[windows:vars]
+ansible_connection=winrm
+ansible_port=5985
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_read_timeout_sec=1500
+ansible_winrm_operation_timeout_sec=900
+
+[linux]
+%{ for index, ip in linux-address ~}
+${ip}
+%{ endfor ~}
+
+[linux:vars]
+ansible_connection=ssh
+ansible_become=yes
+host_key_checking=False

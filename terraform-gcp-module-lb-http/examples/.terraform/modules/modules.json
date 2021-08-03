@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"example","Source":"../terraform-gcp-modules/terraform-gcp-compute","Dir":""},{"Key":"example2","Source":"../terraform-gcp-modules/terraform-gcp-compute","Dir":""},{"Key":"load_balancer","Source":"../terraform-gcp-modules/terraform-gcp-compute-lb-http","Dir":""}]}
